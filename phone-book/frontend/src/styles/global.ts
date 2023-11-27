@@ -8,7 +8,7 @@ import Inter800 from "../fonts/inter-v13-latin-800.woff2";
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
-font-family: 'Inter 200';
+font-family: "Inter 200";
   src: url(${Inter200}) format('woff2'),
 }
 
@@ -38,18 +38,15 @@ body {
     padding: 0;
     border: none;
     box-sizing: border-box;
-    font-family: 'Visby Medium', sans-serif;
+    font-family: 'Inter 400', sans-serif;
     scroll-behavior: smooth;
     font-weight: normal;
     
   }
 
   body {
-    background: ${({
-      theme,
-    }: {
-      theme: { colors: { background: Record<string, string> } };
-    }) => theme.colors.background};
+    background: ${({ theme }: { theme: { colors: { background: Record<string, string> } } }) =>
+      theme.colors.background};
     width: 100vw;
     height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -93,34 +90,9 @@ body {
     outline: 0;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    color: #575757;
-    font-weight: bold;
-  }
+  ul,ol {
+	list-style: none;
+}
 
-  h1 {
-    font-size: 1.375rem;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  h5 {
-    font-size: 14px;
-  }
-
-  small {
-    color: #575757;
-    font-size: 0.65rem;
-    font-weight: 400;
-  }
-
-  input[type=password]::-ms-clear{
-    display: none;
-  }
-
-  input[type=password]::-ms-reveal{
-    display: none;
-  }
 `;
+export default GlobalStyle;
