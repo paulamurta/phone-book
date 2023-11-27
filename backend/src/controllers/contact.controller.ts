@@ -45,7 +45,7 @@ export const updateContactController = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     await updateContactService(id, req.body);
-    return res.status(204).json({ message: "Contact successfully updated" });
+    return res.status(204).send({ message: "Contact successfully updated" });
   } catch (err) {
     if (err instanceof AppError) {
       handleError(err, res);
