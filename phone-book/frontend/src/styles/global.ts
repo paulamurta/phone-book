@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./themes/theme";
 
 import Inter200 from "../fonts/inter-v13-latin-200.woff2";
 import Inter400 from "../fonts/inter-v13-latin-400.woff2";
@@ -45,8 +46,7 @@ body {
   }
 
   body {
-    background: ${({ theme }: { theme: { colors: { background: Record<string, string> } } }) =>
-      theme.colors.background};
+    background-color: ${theme.colors.background.mediumGray};
     width: 100vw;
     height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -72,17 +72,16 @@ body {
     
     &:disabled {
     cursor: not-allowed;
-    background-color: #c6c6c6;
-    color: #ffffff;
+    background-color: ${theme.colors.light.mediumDark};
+    color: ${theme.colors.typography.title};
     border: none;
 
       &:hover {
-        background-color: #c6c6c6;
+        background-color: ${theme.colors.light.mediumDark};
       }
 
       &:active {
-        background-color: #c6c6c6;
-      }
+        background-color: ${theme.colors.light.mediumDark};      }
     }
   }
 
