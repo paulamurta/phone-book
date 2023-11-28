@@ -55,8 +55,8 @@ class ContactRepository {
 
   findByLastName(lastName: string): Promise<IContact[]> {
     return new Promise((resolve, reject) => {
-      const matchingContacts = this.contacts.filter(
-        (contact) => contact.lastName.toUpperCase() === lastName.toUpperCase()
+      const matchingContacts = this.contacts.filter((contact) =>
+        contact.lastName.toUpperCase().includes(lastName.toUpperCase())
       );
       this.saveToFile();
       resolve(matchingContacts);
