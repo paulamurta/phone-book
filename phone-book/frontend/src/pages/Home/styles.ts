@@ -45,19 +45,6 @@ export const HeaderButton = styled.button`
   }
 `;
 
-export const LogoBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.5vw;
-
-  svg {
-    color: ${({ theme }) => theme.colors.typography.body};
-    height: clamp(1.2rem, 1.2rem + 5.3vh, 4.2rem);
-    width: clamp(1.2rem, 1.2rem + 5.3vh, 4.2rem);
-  }
-`;
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,30 +62,4 @@ export const TextContainer = styled.div`
   justify-content: center;
   align-items: flex-end;
   gap: 2vh;
-`;
-
-export const EnterButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5vw;
-  padding: 1vw;
-  display: flex;
-  color: ${({ theme }) => theme.colors.typography.white};
-  background-color: transparent;
-  border-radius: 30px;
-  font-size: clamp(0.1rem, 0.1rem + 1.8vh, 1.3rem);
-  cursor: pointer;
-  border: 1px solid ${({ theme }) => theme.colors.typography.white};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.typography.white};
-    color: ${({ theme }) => theme.colors.typography.body};
-    transition: background-color 1s ease-in-out;
-  }
-
-  svg {
-    height: clamp(0.1rem, 0.1rem + 1.8vh, 1.3rem);
-    width: clamp(0.1rem, 0.1rem + 1.8 vh, 1.3rem);
-  }
 `;

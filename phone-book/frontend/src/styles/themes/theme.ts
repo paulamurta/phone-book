@@ -9,7 +9,7 @@ export const theme = {
     },
     primary: {
       main: "#347BF6",
-      light: "#99D6FF",
+      dark: "#265AB3",
     },
     light: {
       main: "#B2B2B2",
@@ -18,7 +18,7 @@ export const theme = {
     },
     dark: {
       main: "#00233B",
-      light: "#99A7B1",
+      light: "#5C5C5C",
     },
     success: {
       main: "#1AD598",
@@ -33,12 +33,11 @@ export const theme = {
       light: "#FDE3BD",
     },
     background: {
-      mediumGray: "##F6F6F6",
-      fairGray: "#F8F8F8",
+      mediumGray: "#F6F6F6",
       white: "#ffffff",
     },
     border: {
-      main: "#dbe1e7",
+      main: "#C4C4C4",
     },
   },
 };

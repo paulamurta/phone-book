@@ -93,7 +93,6 @@ export default GlobalStyle;
 export const ContainerRow = styled.div<IContainer>`
   display: flex;
   align-items: center;
-  height: 100%;
   width: 100%;
   gap: 1vw;
   ${(props) =>
@@ -106,7 +105,7 @@ export const ContainerRow = styled.div<IContainer>`
             justify-content: flex-end;
           `
         : css`
-            justify-content: center;
+            justify-content: space-between;
           `}
 `;
 
@@ -129,4 +128,18 @@ export const ContainerColumn = styled.div<IContainer>`
         : css`
             justify-content: center;
           `}
+`;
+
+export const LogoBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5vw;
+
+  svg {
+    color: ${({ theme }) => theme.colors.typography.body};
+    height: clamp(1.2rem, 1.2rem + 5.3vh, 4.2rem);
+    width: clamp(1.2rem, 1.2rem + 5.3vh, 4.2rem);
+  }
 `;

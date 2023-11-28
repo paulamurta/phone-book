@@ -20,6 +20,14 @@ export const Header2 = styled.h2<ITypography>`
   `}
 `;
 
+export const Header3 = styled.h2<ITypography>`
+  ${({ theme, fontColor }) => css`
+    font-size: clamp(0.8rem, 0.7rem + 3.2vh, 3rem);
+    font-family: "Inter 600", sans-serif;
+    color: ${fontColor ? fontColor : theme.colors.typography.body};
+  `}
+`;
+
 export const Body1 = styled.p<ITypography>`
   ${({ theme, fontColor }) => css`
     font-size: 1rem;

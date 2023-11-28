@@ -1,27 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../styles/themes/theme";
-
-export const Background = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  padding: 3vw;
-  background-color: ${theme.colors.background.white};
-`;
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 70%;
-  height: 100%;
-  padding: 3vw;
-  gap: 6vh;
-  background-color: ${theme.colors.background.mediumGray};
-`;
 
 export const AddButton = styled.button`
   padding: 1vw;
