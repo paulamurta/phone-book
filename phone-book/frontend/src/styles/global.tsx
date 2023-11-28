@@ -1,9 +1,11 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 import { theme } from "./themes/theme";
 import Inter200 from "../fonts/inter-v13-latin-200.woff2";
 import Inter400 from "../fonts/inter-v13-latin-400.woff2";
 import Inter600 from "../fonts/inter-v13-latin-600.woff2";
 import Inter800 from "../fonts/inter-v13-latin-800.woff2";
+import styled from "styled-components";
+import { IContainer } from "./types";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -65,7 +67,7 @@ font-family: "Inter 800";
     &:disabled {
     cursor: not-allowed;
     background-color: ${theme.colors.light.mediumDark};
-    color: ${theme.colors.typography.title};
+    color: ${theme.colors.typography.body};
     border: none;
 
       &:hover {
@@ -87,3 +89,44 @@ font-family: "Inter 800";
 
 `;
 export default GlobalStyle;
+
+export const ContainerRow = styled.div<IContainer>`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 1vw;
+  ${(props) =>
+    props.position === "left"
+      ? css`
+          justify-content: flex-start;
+        `
+      : props.position === "right"
+        ? css`
+            justify-content: flex-end;
+          `
+        : css`
+            justify-content: center;
+          `}
+`;
+
+export const ContainerColumn = styled.div<IContainer>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 1vh;
+  ${(props) =>
+    props.position === "top"
+      ? css`
+          justify-content: flex-start;
+        `
+      : props.position === "bottom"
+        ? css`
+            justify-content: flex-end;
+          `
+        : css`
+            justify-content: center;
+          `}
+`;
