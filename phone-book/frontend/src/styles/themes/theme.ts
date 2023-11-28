@@ -2,7 +2,7 @@ export const theme = {
   colors: {
     typography: {
       body: "#222529",
-      lightGray: "#C4CCD1",
+      lightGray: "#B5B6B7",
       darkGray: "#00233B",
       blueGray: "#D9E1E7",
       white: "#ffffff",
@@ -33,11 +33,12 @@ export const theme = {
       light: "#FDE3BD",
     },
     background: {
+      darkGray: "#CBCBCB",
       mediumGray: "#F6F6F6",
       white: "#ffffff",
     },
     border: {
-      main: "#C4C4C4",
+      main: "#D5D5D5",
     },
   },
 };

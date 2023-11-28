@@ -5,8 +5,8 @@ export const Container = styled.div<IContainer>`
   width: ${({ size }) => (size ? size : "100%")};
   display: flex;
   height: 6vh;
-  padding: 0.5vw;
-  border-radius: 4px;
+  padding: 0.5vw 1vw;
+  border-radius: 8px;
   outline: 1.5px solid ${({ theme }) => theme.colors.border.main};
   transition: all 0.2s ease-in;
   background-color: ${({ theme }) => theme.colors.background.white};
@@ -42,7 +42,7 @@ export const Container = styled.div<IContainer>`
   }
 `;
 
-export const IconBox = styled.div`
+export const IconBox = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,28 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SearchProps } from "./types";
-import { useTheme } from "styled-components";
 import { IoMdClose as CloseIcon } from "react-icons/io";
 import { FiSearch as SearchIcon } from "react-icons/fi";
 import { Container, IconBox } from "./styles";
 
-export function Search({ inputWidth, currentValue, message, onSearch }: SearchProps) {
+export function Search({ inputWidth, message, onSearch }: SearchProps) {
   const [value, setValue] = useState("");
-  const { colors: theme } = useTheme();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (currentValue && currentValue.length > 0) {
-        setValue(currentValue);
-      }
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [currentValue]);
-
-  //  const debounceChange = useDebounce(onSearch, 400);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value);
+    onSearch(e.target.value);
   }
 
   return (
@@ -32,22 +19,19 @@ export function Search({ inputWidth, currentValue, message, onSearch }: SearchPr
       </IconBox>
       <input
         type="text"
-        placeholder={message ? message : `${"Pesquisar"}`}
+        placeholder={message ? message : `${"Search..."}`}
         value={value}
         onChange={handleChange}
       />
       {value ? (
-        <button
-          type="button"
+        <IconBox
           onClick={() => {
             setValue("");
             onSearch("");
           }}
         >
-          <IconBox>
-            <CloseIcon />
-          </IconBox>
-        </button>
+          <CloseIcon />
+        </IconBox>
       ) : (
         ""
       )}

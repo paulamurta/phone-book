@@ -41,12 +41,12 @@ const Home = () => {
         <Content>
           <LogoBox>
             <BiSolidContact />
-            <Header1 fontColor={theme.typography.body}>Phone Book App</Header1>
+            <Header1 fontcolor={theme.typography.body}>Phone Book App</Header1>
           </LogoBox>
           <TextContainer>
-            <Header2 fontColor={theme.typography.white}>Your contacts list.</Header2>
-            <Header2 fontColor={theme.typography.white}>Anytime.</Header2>
-            <Header2 fontColor={theme.typography.white}>Anywhere.</Header2>
+            <Header2 fontcolor={theme.typography.white}>Your contacts list.</Header2>
+            <Header2 fontcolor={theme.typography.white}>Anytime.</Header2>
+            <Header2 fontcolor={theme.typography.white}>Anywhere.</Header2>
           </TextContainer>
           <EnterButton />
         </Content>

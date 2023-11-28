@@ -45,7 +45,7 @@ font-family: "Inter 800";
     height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-y: hidden;
+    overflow-y: auto;
   }
 
   ::-webkit-scrollbar {
@@ -136,6 +136,7 @@ export const LogoBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 0.5vw;
+  margin-bottom: 4vh;
 
   svg {
     color: ${({ theme }) => theme.colors.typography.body};
