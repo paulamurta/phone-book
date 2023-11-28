@@ -11,11 +11,13 @@ import { useQuery } from "react-query";
 import { api } from "../../api/api";
 import { IContact } from "../../interfaces/IContact";
 import { Card } from "../../components/Card";
+import { ModalNewContact } from "./ModalNew";
 
 const Contacts = () => {
   const { colors: theme } = useTheme();
   const [searchParam, setSearchParam] = useState("");
   const [contacts, setContacts] = useState<IContact[]>([]);
+  const [modalNewContact, setModalNewContact] = useState(false);
 
   const { refetch } = useQuery(
     ["contacts", searchParam],
@@ -39,47 +41,61 @@ const Contacts = () => {
 
   useEffect(() => {
     refetch();
-  }, [contacts, searchParam, refetch]);
+  }, [searchParam, refetch]);
+
+  useEffect(() => {
+    setModalNewContact(true);
+  }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: "100%" }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: "-100%" }}
-      transition={{ duration: 1 }}
-    >
-      <Background>
-        <Content>
-          <LogoBox>
-            <BiSolidContact />
-            <Header1 fontcolor={theme.typography.body}>Phone Book App</Header1>
-          </LogoBox>
+    <>
+      <ModalNewContact
+        isModalActive={modalNewContact}
+        closeModal={() => {
+          refetch();
+          setModalNewContact(!modalNewContact);
+        }}
+      />
 
-          <ContainerRow>
-            <Header3>Contacts</Header3>
-            <AddContactButton />
-          </ContainerRow>
+      <motion.div
+        initial={{ opacity: 0, x: "100%" }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: "-100%" }}
+        transition={{ duration: 1 }}
+      >
+        <Background>
+          <Content>
+            <LogoBox>
+              <BiSolidContact />
+              <Header1 fontcolor={theme.typography.body}>Phone Book App</Header1>
+            </LogoBox>
 
-          <Search
-            message={"Search for contact by last name..."}
-            onSearch={(value) => {
-              setSearchParam(value);
-            }}
-          />
+            <ContainerRow>
+              <Header3>Contacts</Header3>
+              <AddContactButton setModalNewContact={setModalNewContact} />
+            </ContainerRow>
 
-          <List>
-            {contacts.map((contact) => (
-              <Card
-                key={contact.id}
-                firstName={contact.firstName}
-                lastName={contact.lastName}
-                phone={contact.phone}
-              />
-            ))}
-          </List>
-        </Content>
-      </Background>
-    </motion.div>
+            <Search
+              message={"Search for contact by last name..."}
+              onSearch={(value) => {
+                setSearchParam(value);
+              }}
+            />
+
+            <List>
+              {contacts.map((contact) => (
+                <Card
+                  key={contact.id}
+                  firstName={contact.firstName}
+                  lastName={contact.lastName}
+                  phone={contact.phone}
+                />
+              ))}
+            </List>
+          </Content>
+        </Background>
+      </motion.div>
+    </>
   );
 };
 

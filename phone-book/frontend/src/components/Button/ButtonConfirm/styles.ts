@@ -1,14 +1,15 @@
 import styled from "styled-components";
+import { ButtonConfirmProps } from "./types";
 
-export const AddButton = styled.button`
-  padding: 1vw;
-  min-width: 13vw;
+export const Button = styled.button<ButtonConfirmProps>`
+  width: ${({ width }) => (width ? width : "100%")};
+  height: ${({ height }) => (height ? height : "60px")};
   color: ${({ theme }) => theme.colors.typography.white};
   background-color: ${({ theme }) => theme.colors.primary.main};
   border-radius: 8px;
   font-size: clamp(0.6rem, 0.5rem + 2.3vh, 1.8rem);
-  cursor: pointer;
   white-space: nowrap;
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary.dark};

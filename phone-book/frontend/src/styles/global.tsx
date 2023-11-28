@@ -144,3 +144,32 @@ export const LogoBox = styled.div`
     width: clamp(1.2rem, 1.2rem + 5.3vh, 4.2rem);
   }
 `;
+
+export const OverlayModal = styled.div`
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+`;
+
+export const FormModal = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 1rem;
+`;

@@ -9,7 +9,6 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.colors.typography.body};
   background-color: ${({ theme }) => theme.colors.background.white};
   font-size: clamp(0.6rem, 0.5rem + 2.3vh, 1.8rem);
-  cursor: pointer;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.background.mediumGray};
@@ -25,7 +24,6 @@ export const PhoneContainer = styled.div`
   width: 100%;
   color: ${({ theme }) => theme.colors.typography.lightGray};
   font-size: clamp(0.6rem, 0.5rem + 2.3vh, 1.8rem);
-  cursor: pointer;
 
   svg {
     height: clamp(0.4rem, 0.3rem + 1.6vh, 1.5rem);
