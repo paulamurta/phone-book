@@ -53,6 +53,16 @@ class ContactRepository {
     });
   }
 
+  findByLastName(lastName: string): Promise<IContact[]> {
+    return new Promise((resolve, reject) => {
+      const matchingContacts = this.contacts.filter(
+        (contact) => contact.lastName.toUpperCase() === lastName.toUpperCase()
+      );
+      this.saveToFile();
+      resolve(matchingContacts);
+    });
+  }
+
   findIndexById(id: string): Promise<number> {
     return new Promise((resolve, reject) => {
       const foundIndex = this.contacts.findIndex((contact) => contact.id == id);

@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   createContactController,
   deleteContactsController,
+  getContactsByLastNameController,
   getContactsController,
   updateContactController,
 } from "../controllers/contact.controller";
@@ -19,6 +20,7 @@ router.post(
   createContactController
 );
 router.get("/contacts", getContactsController);
+router.get("/contacts/:search", getContactsByLastNameController);
 router.delete("/contacts/:id", deleteContactsController);
 router.put(
   "/contacts/:id",

@@ -6,8 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(router);
 
-app.listen(3000, () => {
-  console.log("Running at port 3000");
+app.listen(3009, () => {
+  console.log("Running at port 3009");
 });
 
 export default app;

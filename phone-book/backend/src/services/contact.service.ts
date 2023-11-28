@@ -17,6 +17,12 @@ export const getContactsService = async (): Promise<IContact[]> => {
   return contactRepository.getAll();
 };
 
+export const getContactsByLastNameService = async (
+  search: string
+): Promise<IContact[]> => {
+  return contactRepository.findByLastName(search);
+};
+
 export const deleteContactService = async (id: string) => {
   const foundIndex = await contactRepository.findIndexById(id);
 
