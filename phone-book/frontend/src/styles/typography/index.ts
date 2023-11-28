@@ -5,10 +5,10 @@ interface ITypography {
 }
 
 export const Header1 = styled.h1<ITypography>`
-  ${({ theme }) => css`
+  ${({ theme, fontColor }) => css`
     font-size: 4rem;
     font-family: "Inter 800", sans-serif;
-    color: ${theme.colors.typography.title};
+    color: ${fontColor ? fontColor : theme.colors.typography.title};
   `}
 `;
 
