@@ -6,6 +6,7 @@ export type DefaultInputProps = {
   width?: string;
   message?: string;
   onChange: (value: string) => void;
+  value?: string;
 };
 
 export interface IContainer {

@@ -12,12 +12,19 @@ import { IContact } from "../../interfaces/IContact";
 import { Card } from "../../components/Card";
 import { ModalNewContact } from "./ModalNew";
 import { ButtonConfirm } from "../../components/Button/ButtonConfirm";
+import { ModalEditContact } from "./ModalEdit";
+import { ModalDeleteContact } from "./ModalDelete";
 
 const Contacts = () => {
   const { colors: theme } = useTheme();
   const [searchParam, setSearchParam] = useState("");
   const [contacts, setContacts] = useState<IContact[]>([]);
   const [modalNewContact, setModalNewContact] = useState(false);
+  const [modalEditContact, setModalEditContact] = useState(false);
+  const [modalDeleteContact, setModalDeleteContact] = useState(false);
+  const [id, setId] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
 
   const { refetch } = useQuery(
     ["contacts", searchParam],
@@ -26,7 +33,7 @@ const Contacts = () => {
         return api.get("/contacts");
       }
       if (searchParam.length > 0) {
-        return api.get(`/contacts/${searchParam}`);
+        return api.get(`/contacts/lastname/${searchParam}`);
       }
     },
     {
@@ -50,6 +57,24 @@ const Contacts = () => {
         closeModal={() => {
           refetch();
           setModalNewContact(false);
+        }}
+      />
+      <ModalEditContact
+        keyId={id}
+        isModalActive={modalEditContact}
+        closeModal={() => {
+          refetch();
+          setModalEditContact(false);
+        }}
+      />
+      <ModalDeleteContact
+        firstName={firstName}
+        lastName={lastName}
+        keyId={id}
+        isModalActive={modalDeleteContact}
+        closeModal={() => {
+          refetch();
+          setModalDeleteContact(false);
         }}
       />
 
@@ -89,6 +114,14 @@ const Contacts = () => {
                   firstName={contact.firstName}
                   lastName={contact.lastName}
                   phone={contact.phone}
+                  setModalEditContact={setModalEditContact}
+                  modalEditContact={modalEditContact}
+                  setModalDeleteContact={setModalDeleteContact}
+                  modalDeleteContact={modalDeleteContact}
+                  setId={setId}
+                  setFirstName={setFirstName}
+                  setLastName={setLastName}
+                  id={contact.id}
                 />
               ))}
             </List>

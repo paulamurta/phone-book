@@ -11,12 +11,11 @@ export function DefaultInput({
   disabled,
   onChange,
   message,
+  value,
 }: DefaultInputProps) {
-  const [value, setValue] = useState("");
-
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setValue(e.target.value);
-    onChange(e.target.value);
+    const newValue = e.target.value;
+    onChange(newValue);
   }
 
   return (
@@ -25,7 +24,7 @@ export function DefaultInput({
       <InputContainer height={height} width={width}>
         <input
           placeholder={placeholder ? placeholder : `${"Insert here..."}`}
-          value={value}
+          value={value || ""}
           onChange={handleChange}
           disabled={disabled ? disabled : false}
         />

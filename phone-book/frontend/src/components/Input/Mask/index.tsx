@@ -12,12 +12,12 @@ export function MaskInput({
   onChange,
   message,
   mask,
+  value,
 }: MaskInputProps) {
-  const [value, setValue] = useState("");
-
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setValue(e.target.value);
-    onChange(e.target.value);
+    const newValue = e.target.value;
+
+    onChange(newValue);
   }
 
   return (
@@ -31,7 +31,7 @@ export function MaskInput({
         onChange={handleChange}
         disabled={disabled ? disabled : false}
         maskChar={null}
-        value={value}
+        value={value || ""}
       />
       {message && <Small>{message}</Small>}
     </Container>

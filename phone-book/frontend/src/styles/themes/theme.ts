@@ -9,7 +9,7 @@ export const theme = {
     },
     primary: {
       main: "#347BF6",
-      dark: "#265AB3",
+      light: "#78A0E4",
     },
     light: {
       main: "#B2B2B2",
@@ -22,11 +22,11 @@ export const theme = {
     },
     success: {
       main: "#1AD598",
-      light: "#A3EED6",
+      light: "#90DBC3",
     },
     danger: {
       main: "#CB444A",
-      light: "#F6AFB0",
+      light: "#DD8C8D",
     },
     warning: {
       main: "#F9B959",
