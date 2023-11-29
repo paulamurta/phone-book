@@ -104,8 +104,8 @@ export function ModalEditContact({ isModalActive, closeModal, keyId }: EditConta
         isModalActive={isModalConfirmOpen}
         handleCancel={handleCancelModal}
         handleClose={handleCloseModal}
-        title="Cancel Register Contact?"
-        message="You are leaving Register Contact. Would you like to continue?"
+        title="Cancel Edit Contact?"
+        message="You are leaving Edit Contact. Would you like to continue?"
       />
       <WrapperModal>
         <Header4>Edit Contact</Header4>
