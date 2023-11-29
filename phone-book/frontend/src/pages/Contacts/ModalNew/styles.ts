@@ -16,3 +16,23 @@ export const Container = styled.div`
     transition: background-color 0.3s ease-in-out;
   }
 `;
+
+export const WrapperModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4vh;
+  padding: 2vw;
+  background-color: ${({ theme }) => theme.colors.background.white};
+  max-height: 60%;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px #00000029;
+
+  svg {
+    height: 30px;
+    width: 30px;
+    color: ${({ theme }) => theme.colors.primary.main};
+  }
+`;

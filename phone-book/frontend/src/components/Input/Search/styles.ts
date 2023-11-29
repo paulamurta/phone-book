@@ -10,17 +10,11 @@ export const Container = styled.div<IContainer>`
   outline: 1.5px solid ${({ theme }) => theme.colors.border.main};
   transition: all 0.2s ease-in;
   background-color: ${({ theme }) => theme.colors.background.white};
+
   input::placeholder {
     color: ${({ theme }) => theme.colors.light.main};
     font-size: clamp(0.2rem, 0.17rem + 1.8vh, 3rem);
     font-family: "Inter 400";
-  }
-
-  &:hover {
-    input::placeholder {
-      color: ${({ theme }) => theme.colors.dark.light};
-      transition: "color 0.3s ease-in-out";
-    }
   }
 
   & input {
@@ -28,7 +22,7 @@ export const Container = styled.div<IContainer>`
     border: none;
     height: 100%;
     margin-left: 0.8vw;
-    color: ${({ theme }) => theme.colors.light.main};
+    color: ${({ theme }) => theme.colors.dark.light};
     font-size: clamp(0.2rem, 0.17rem + 1.8vh, 3rem);
     font-family: "Inter 400";
 

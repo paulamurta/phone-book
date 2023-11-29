@@ -52,6 +52,14 @@ export const Body2 = styled.p<ITypography>`
   `}
 `;
 
+export const Body3 = styled.p<ITypography>`
+  ${({ theme, fontcolor }) => css`
+    font-size: clamp(0.3rem, 0.25rem + 1.5vh, 1.7rem);
+    font-family: "Inter 400", sans-serif;
+    color: ${fontcolor ? fontcolor : theme.colors.typography.body};
+  `}
+`;
+
 export const Small = styled.small<ITypography>`
   ${({ theme }) => css`
     font-size: clamp(0.1rem, 0.4rem + 0.75vh, 1.3rem);

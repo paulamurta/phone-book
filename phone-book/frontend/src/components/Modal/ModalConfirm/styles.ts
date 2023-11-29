@@ -6,11 +6,12 @@ interface IButton {
 }
 
 export const Button = styled.button<IButton>`
-  min-width: 60px;
-  height: 35px;
+  min-width: 4vw;
+  height: 3vh;
   border-radius: 3px;
   padding: 0 2px;
-  font-size: 1rem;
+  font-family: "Inter 600", sans-serif;
+  font-size: clamp(0.3rem, 0.2rem + 1.3vh, 1.7rem);
   background-color: transparent;
   border: none;
   color: ${({ fontcolor }) => fontcolor};
@@ -22,54 +23,28 @@ export const Button = styled.button<IButton>`
   }
 `;
 
-export const ContainerConfirm = styled.div`
+export const WrapperConfirm = styled.div`
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.background.white};
   border-radius: 16px;
-  min-width: 330px;
-  max-width: 430px;
+  min-height: 20%;
+  max-width: 30%;
   box-shadow: 0px 3px 6px #00000029;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  padding: 25px;
-  gap: 25px;
-
-  .text-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px;
-  }
-`;
-
-export const WrapperModal = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 4vh;
   padding: 2vw;
-  background-color: ${({ theme }) => theme.colors.background.white};
-  max-height: 60%;
-  width: 50%;
-  border-radius: 10px;
-  box-shadow: 0px 1px 4px #00000029;
-
-  svg {
-    height: 30px;
-    width: 30px;
-    color: ${({ theme }) => theme.colors.primary.main};
-  }
+  gap: 2vh;
 `;
 
-export const WrapperContent = styled.div`
+export const WrapperText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  gap: 30px;
+  align-items: center;
+  gap: 2vh;
+  text-align: center;
 `;
 
 export const Actions = styled.div`

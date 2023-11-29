@@ -6,11 +6,11 @@ import { useState, FormEvent, useEffect } from "react";
 import { NewContactModalProps } from "./types";
 import { ButtonsBox, FormModal, OverlayModal } from "../../../styles/global";
 import { ModalConfirm } from "../../../components/Modal/ModalConfirm";
-import { WrapperModal } from "../../../components/Modal/ModalConfirm/styles";
 import { Header4 } from "../../../styles/typography";
 import { ButtonConfirm } from "../../../components/Button/ButtonConfirm";
 import { DefaultInput } from "../../../components/Input/DefaultInput";
 import { MaskInput } from "../../../components/Input/Mask";
+import { WrapperModal } from "./styles";
 
 export function ModalNewContact({ isModalActive, closeModal }: NewContactModalProps) {
   const modalRoot = document.getElementById("modal") as HTMLElement;
@@ -79,8 +79,8 @@ export function ModalNewContact({ isModalActive, closeModal }: NewContactModalPr
         isModalActive={isModalConfirmOpen}
         handleCancel={handleCancelModal}
         handleClose={handleCloseModal}
-        title="Cancel Create Contact?"
-        message="You are leaving Add Contact. Would you like to continue?"
+        title="Cancel Register Contact?"
+        message="You are leaving Register Contact. Would you like to continue?"
       />
       <WrapperModal>
         <Header4>Register Contact</Header4>
@@ -105,7 +105,7 @@ export function ModalNewContact({ isModalActive, closeModal }: NewContactModalPr
             mask="999-999-9999"
             key="phone"
             label={"Phone Number*"}
-            placeholder={"John"}
+            placeholder={"000-000-0000"}
             message={"Phone Number must be exactly a 10-digit number"}
             onChange={(value) => {
               setPhone(value.replace(/-/g, ""));
