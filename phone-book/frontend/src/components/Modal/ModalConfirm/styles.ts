@@ -46,12 +46,16 @@ export const ContainerConfirm = styled.div`
 
 export const WrapperModal = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px;
+  gap: 4vh;
+  padding: 2vw;
   background-color: ${({ theme }) => theme.colors.background.white};
-  height: 30%;
+  max-height: 60%;
   width: 50%;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px #00000029;
 
   svg {
     height: 30px;

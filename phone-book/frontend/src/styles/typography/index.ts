@@ -28,6 +28,14 @@ export const Header3 = styled.h2<ITypography>`
   `}
 `;
 
+export const Header4 = styled.h2<ITypography>`
+  ${({ theme, fontcolor }) => css`
+    font-size: clamp(0.6rem, 0.4rem + 2.1vh, 2.8rem);
+    font-family: "Inter 600", sans-serif;
+    color: ${fontcolor ? fontcolor : theme.colors.typography.body};
+  `}
+`;
+
 export const Body1 = styled.p<ITypography>`
   ${({ theme, fontcolor }) => css`
     font-size: clamp(0.5rem, 0.4rem + 2.2vh, 2.8rem);
@@ -46,7 +54,7 @@ export const Body2 = styled.p<ITypography>`
 
 export const Small = styled.small<ITypography>`
   ${({ theme }) => css`
-    font-size: 0.5rem;
+    font-size: clamp(0.1rem, 0.4rem + 0.75vh, 1.3rem);
     font-family: "Inter 200", sans-serif;
     color: ${theme.colors.typography.body};
   `}
@@ -55,6 +63,6 @@ export const Small = styled.small<ITypography>`
 export const LabelText = styled.p<ITypography>`
   width: 100%;
   color: ${({ theme, fontcolor }) => (fontcolor ? fontcolor : theme.colors.typography.body)};
-  font-family: "Inter 200", sans-serif;
-  font-size: 0.9rem;
+  font-family: "Inter 400", sans-serif;
+  font-size: clamp(0.2rem, 0.5rem + 0.9vh, 2rem);
 `;

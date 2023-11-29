@@ -10,7 +10,7 @@ export function ButtonConfirm({
   onClick,
 }: ButtonConfirmProps) {
   return (
-    <Button onClick={onClick} type={type} disabled={disabled}>
+    <Button onClick={onClick} type={type} disabled={disabled} width={width} height={height}>
       {label}
     </Button>
   );

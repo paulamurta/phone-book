@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { AddContactButton } from "../../components/Button/AddContactButton";
-import { Search } from "../../components/Search";
+import { Search } from "../../components/Input/Search";
 import { ContainerRow, LogoBox } from "../../styles/global";
 import { Header3, Header1 } from "../../styles/typography";
 import { Background, Content, List } from "./styles";
@@ -12,6 +11,7 @@ import { api } from "../../api/api";
 import { IContact } from "../../interfaces/IContact";
 import { Card } from "../../components/Card";
 import { ModalNewContact } from "./ModalNew";
+import { ButtonConfirm } from "../../components/Button/ButtonConfirm";
 
 const Contacts = () => {
   const { colors: theme } = useTheme();
@@ -43,17 +43,13 @@ const Contacts = () => {
     refetch();
   }, [searchParam, refetch]);
 
-  useEffect(() => {
-    setModalNewContact(true);
-  }, []);
-
   return (
     <>
       <ModalNewContact
         isModalActive={modalNewContact}
         closeModal={() => {
           refetch();
-          setModalNewContact(!modalNewContact);
+          setModalNewContact(false);
         }}
       />
 
@@ -72,7 +68,11 @@ const Contacts = () => {
 
             <ContainerRow>
               <Header3>Contacts</Header3>
-              <AddContactButton setModalNewContact={setModalNewContact} />
+              <ButtonConfirm
+                onClick={() => setModalNewContact(true)}
+                width={"25%"}
+                label={"+ Add Contact"}
+              />
             </ContainerRow>
 
             <Search

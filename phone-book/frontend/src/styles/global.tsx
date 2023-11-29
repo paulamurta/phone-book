@@ -164,12 +164,13 @@ export const FormModal = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 `;
 
-export const ButtonBox = styled.div`
+export const ButtonsBox = styled.div`
   display: flex;
   align-items: flex-start;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
 `;
