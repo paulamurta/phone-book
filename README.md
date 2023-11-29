@@ -1,5 +1,5 @@
 # Phone Book App
-A simple fullstack application that emulates a digital phone book. Built with React.js, Node.js and Typescript, it should be able to manipulate a contact list.
+A simple fullstack application that emulates a digital phone book. Built with React.js, Node.js and Typescript, it should be able to manipulate a contacts list.
 Basic actions include: register, list, filter, edit and delete entries. 
 The application is not connected to a database, although it works with a built-in JSON Server.
 
@@ -13,11 +13,11 @@ npm install
 ```
 
 ## Run
-Backend runs on port 3009. For backend:
+Backend runs at port 3009. For backend:
 ```
 npm run dev
 ```
-Frontend runs on port 3000. For frontend:
+Frontend runs at port 3000. For frontend:
 ```
 npm run start
 ```
