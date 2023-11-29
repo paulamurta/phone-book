@@ -58,7 +58,7 @@ export const updateContactService = async (id: string, contact: IContact) => {
 
   const foundContact = await contactRepository.findByPhone(phone);
 
-  if (foundContact) {
+  if (foundContact && foundContact.id !== id) {
     throw new AppError(400, "Phone number already registered");
   }
 
