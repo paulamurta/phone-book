@@ -63,18 +63,18 @@ export function ModalDeleteContact({
         </WrapperText>
         <SmallButtonsBox>
           <Button
+            fontcolor={theme.danger.main}
+            hovercolor={theme.background.mediumGray}
+            onClick={handleSubmit}
+          >
+            Yes
+          </Button>
+          <Button
             fontcolor={theme.typography.darkGray}
             hovercolor={theme.background.mediumGray}
             onClick={handleCloseModal}
           >
             No
-          </Button>
-          <Button
-            fontcolor={theme.primary.main}
-            hovercolor={theme.background.mediumGray}
-            onClick={handleSubmit}
-          >
-            "Yes"
           </Button>
         </SmallButtonsBox>
       </WrapperConfirm>
