@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import {
   createContactService,
   deleteContactService,
+  getContactByIdService,
   getContactsByLastNameService,
   getContactsService,
   updateContactService,
@@ -38,6 +39,17 @@ export const getContactsByLastNameController = async (
   try {
     const contacts = await getContactsByLastNameService(search);
     return res.json(contacts);
+  } catch (err) {
+    if (err instanceof AppError) {
+      handleError(err, res);
+    }
+  }
+};
+export const getContactByIdController = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  try {
+    const contact = await getContactByIdService(id);
+    return res.json(contact);
   } catch (err) {
     if (err instanceof AppError) {
       handleError(err, res);

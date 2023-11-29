@@ -23,6 +23,17 @@ export const getContactsByLastNameService = async (
   return contactRepository.findByLastName(search);
 };
 
+export const getContactByIdService = async (
+  id: string
+): Promise<IContact | undefined> => {
+  const foundContact = contactRepository.findById(id);
+
+  if (!foundContact) {
+    throw new AppError(404, "Contact not found.");
+  }
+  return foundContact;
+};
+
 export const deleteContactService = async (id: string) => {
   const foundIndex = await contactRepository.findIndexById(id);
 

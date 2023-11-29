@@ -63,6 +63,14 @@ class ContactRepository {
     });
   }
 
+  findById(id: string): Promise<IContact | undefined> {
+    return new Promise((resolve, reject) => {
+      const foundContact = this.contacts.find((contact) => contact.id === id);
+      this.saveToFile();
+      resolve(foundContact);
+    });
+  }
+
   findIndexById(id: string): Promise<number> {
     return new Promise((resolve, reject) => {
       const foundIndex = this.contacts.findIndex((contact) => contact.id == id);
